@@ -33,13 +33,33 @@ viewerPsycho (pcl::visualization::PCLVisualizer& viewer)
 int
 main (int argc, char** argv)
 {
+    pcl::PointCloud<pcl::PointXYZRGBA>::Ptr original_cloud (new pcl::PointCloud<pcl::PointXYZRGBA>);
     pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZRGBA>);
+    int point_num = 0;
     char filename;
-//    filename = argv[0]
-    pcl::io::loadPCDFile (argv[1], *cloud);
+    pcl::io::loadPCDFile (argv[1], *original_cloud);
+    std::cout << "original_point_num : " << original_cloud->points.size() << std::endl;
+
+    if (argc == 3){
+        point_num = atoi(argv[2]);
+        std::cout << "point_num = " << point_num << std::endl;
+        cloud->width    = point_num;
+        cloud->height   = 1;
+        cloud->is_dense = true;
+        cloud->points.resize(cloud->width * cloud->height);
+
+        for(int i=0; i<point_num; i++){
+          cloud->points[i] = original_cloud->points[i];
+        }
+
+    }else{
+        point_num = cloud->points.size();
+        *cloud += *original_cloud;
+    }
 
     pcl::visualization::CloudViewer viewer("Cloud Viewer");
 
+    std::cout << "view_cloud_point_num : " << cloud->points.size() << std::endl;
     //blocks until the cloud is actually rendered
     viewer.showCloud(cloud);
 

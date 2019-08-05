@@ -1,4 +1,4 @@
-# Install script for directory: /home/hondasora/practice/pcl/mesh2PointCloud
+# Install script for directory: /home/hondasora/learning/practice/pcl_processing_tool/mesh2PointCloud
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/hondasora/practice/pcl/mesh2PointCloud/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/hondasora/learning/practice/pcl_processing_tool/mesh2PointCloud/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

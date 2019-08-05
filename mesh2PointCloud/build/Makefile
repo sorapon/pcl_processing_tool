@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hondasora/practice/pcl/mesh2PointCloud
+CMAKE_SOURCE_DIR = /home/hondasora/learning/practice/pcl_processing_tool/mesh2PointCloud
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hondasora/practice/pcl/mesh2PointCloud/build
+CMAKE_BINARY_DIR = /home/hondasora/learning/practice/pcl_processing_tool/mesh2PointCloud/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hondasora/practice/pcl/mesh2PointCloud/build/CMakeFiles /home/hondasora/practice/pcl/mesh2PointCloud/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hondasora/learning/practice/pcl_processing_tool/mesh2PointCloud/build/CMakeFiles /home/hondasora/learning/practice/pcl_processing_tool/mesh2PointCloud/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hondasora/practice/pcl/mesh2PointCloud/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hondasora/learning/practice/pcl_processing_tool/mesh2PointCloud/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,43 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named adapter
+# Target rules for targets named cloud_viewer
 
 # Build rule for target.
-adapter: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 adapter
-.PHONY : adapter
+cloud_viewer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cloud_viewer
+.PHONY : cloud_viewer
 
 # fast build rule for target.
-adapter/fast:
-	$(MAKE) -f CMakeFiles/adapter.dir/build.make CMakeFiles/adapter.dir/build
-.PHONY : adapter/fast
-
-#=============================================================================
-# Target rules for targets named edit_size
-
-# Build rule for target.
-edit_size: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 edit_size
-.PHONY : edit_size
-
-# fast build rule for target.
-edit_size/fast:
-	$(MAKE) -f CMakeFiles/edit_size.dir/build.make CMakeFiles/edit_size.dir/build
-.PHONY : edit_size/fast
-
-#=============================================================================
-# Target rules for targets named mesh2pcd
-
-# Build rule for target.
-mesh2pcd: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mesh2pcd
-.PHONY : mesh2pcd
-
-# fast build rule for target.
-mesh2pcd/fast:
-	$(MAKE) -f CMakeFiles/mesh2pcd.dir/build.make CMakeFiles/mesh2pcd.dir/build
-.PHONY : mesh2pcd/fast
+cloud_viewer/fast:
+	$(MAKE) -f CMakeFiles/cloud_viewer.dir/build.make CMakeFiles/cloud_viewer.dir/build
+.PHONY : cloud_viewer/fast
 
 #=============================================================================
 # Target rules for targets named downsampling
@@ -176,17 +150,43 @@ pcd2ply/fast:
 .PHONY : pcd2ply/fast
 
 #=============================================================================
-# Target rules for targets named cloud_viewer
+# Target rules for targets named mesh2pcd
 
 # Build rule for target.
-cloud_viewer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cloud_viewer
-.PHONY : cloud_viewer
+mesh2pcd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mesh2pcd
+.PHONY : mesh2pcd
 
 # fast build rule for target.
-cloud_viewer/fast:
-	$(MAKE) -f CMakeFiles/cloud_viewer.dir/build.make CMakeFiles/cloud_viewer.dir/build
-.PHONY : cloud_viewer/fast
+mesh2pcd/fast:
+	$(MAKE) -f CMakeFiles/mesh2pcd.dir/build.make CMakeFiles/mesh2pcd.dir/build
+.PHONY : mesh2pcd/fast
+
+#=============================================================================
+# Target rules for targets named adapter
+
+# Build rule for target.
+adapter: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 adapter
+.PHONY : adapter
+
+# fast build rule for target.
+adapter/fast:
+	$(MAKE) -f CMakeFiles/adapter.dir/build.make CMakeFiles/adapter.dir/build
+.PHONY : adapter/fast
+
+#=============================================================================
+# Target rules for targets named edit_size
+
+# Build rule for target.
+edit_size: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 edit_size
+.PHONY : edit_size
+
+# fast build rule for target.
+edit_size/fast:
+	$(MAKE) -f CMakeFiles/edit_size.dir/build.make CMakeFiles/edit_size.dir/build
+.PHONY : edit_size/fast
 
 #=============================================================================
 # Target rules for targets named simple_downsample
@@ -477,12 +477,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... adapter"
-	@echo "... edit_size"
-	@echo "... mesh2pcd"
+	@echo "... cloud_viewer"
 	@echo "... downsampling"
 	@echo "... pcd2ply"
-	@echo "... cloud_viewer"
+	@echo "... mesh2pcd"
+	@echo "... adapter"
+	@echo "... edit_size"
 	@echo "... simple_downsample"
 	@echo "... add_color"
 	@echo "... move_centroid"
